@@ -3,48 +3,327 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Felix Data Studio | 数据与效率自动化</title>
-  <meta name="description" content="企业数据分析、报表自动化、数据看板与工作台开发服务。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>Felix Data Studio | 数据分析与办公自动化服务</title>
+  <meta name="description" content="面向小微企业、个体经营者和职场团队的数据分析、Excel 报表自动化、网页、工作台与小程序定制服务。" />
+  <meta name="theme-color" content="#15211d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Felix Data Studio 首页"><span class="brand-mark">F</span><span>Felix Data Studio</span></a>
-    <nav class="nav-links" aria-label="主导航"><a href="#services">服务</a><a href="#workflow">方法</a><a href="#cases">案例</a><a href="#contact">联系</a></nav>
-    <a class="header-cta" href="#contact">聊聊你的需求 <span>↗</span></a>
-    <button class="menu-toggle" aria-label="打开菜单">☰</button>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Felix Data Studio 首页">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>Felix Data Studio</span>
+      </a>
+      <nav class="nav-links" id="main-nav" aria-label="主导航">
+        <a href="#scenarios">常见场景</a>
+        <a href="#services">服务</a>
+        <a href="#examples">示例</a>
+        <a href="#process">流程</a>
+        <a href="#faq">问答</a>
+      </nav>
+      <a class="header-cta" href="#brief">获取初步方案 <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="打开导航菜单">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse"></span> 数据，让工作更有余量</p>
-        <h1>把复杂的数据工作，<em>变成清晰的行动。</em></h1>
-        <p class="hero-lead">从业务数据到每周报表，我们为企业搭建可靠的数据底座与自动化工作流，让团队少一点重复，多一点判断。</p>
-        <div class="hero-actions"><a class="button button-primary" href="#contact">预约一次诊断 <span>↗</span></a><a class="text-link" href="#services">看看我们能做什么 <span>↓</span></a></div>
-        <div class="trust-row"><span>适合正在成长的团队</span><span class="trust-line"></span><span>数据 · 流程 · 产品</span></div>
-      </div>
-      <div class="hero-visual" aria-label="数据可视化示意图">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="dashboard-card"><div class="dash-top"><span>BUSINESS INSIGHT / 2024</span><span class="status">● ON TRACK</span></div><div class="metric"><strong>78.4</strong><span>业务表现指数 <b>+12.8%</b></span></div><div class="chart"><i style="height:28%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:78%"></i><i style="height:70%"></i><i style="height:91%"></i></div><div class="chart-labels"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div></div>
-        <div class="float-tag tag-one">数据可信度 <b>98%</b></div><div class="float-tag tag-two">本周已节省 <b>14.5h</b></div>
+  <main id="main">
+    <section class="hero" id="top" role="img" aria-label="屏幕展示数据看板的工作场景">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-kicker"><span></span> 面向小微企业、个体经营者与职场团队</p>
+        <h1>数据分析与<br />办公自动化服务</h1>
+        <p class="hero-lead">Excel 周报月报、经营数据看板、企业网页、内部工作台和微信小程序。先梳理问题，再确认方案与报价。</p>
+        <div class="hero-actions">
+          <a class="button button-accent" href="#brief">填写需求 <i data-lucide="arrow-down" aria-hidden="true"></i></a>
+          <a class="button button-ghost" href="#examples">查看交付示例 <i data-lucide="layout-dashboard" aria-hidden="true"></i></a>
+        </div>
+        <ul class="hero-points" aria-label="服务特点">
+          <li><i data-lucide="file-check-2" aria-hidden="true"></i>交付源文件与说明文档</li>
+          <li><i data-lucide="shield-check" aria-hidden="true"></i>支持脱敏样例先行</li>
+          <li><i data-lucide="messages-square" aria-hidden="true"></i>需求范围确认后再开工</li>
+        </ul>
       </div>
     </section>
 
-    <section class="ticker"><div class="ticker-inner"><span>BUSINESS DATA</span><b>✦</b><span>WORKFLOW AUTOMATION</span><b>✦</b><span>INSIGHT TO ACTION</span><b>✦</b><span>BUSINESS DATA</span><b>✦</b><span>WORKFLOW AUTOMATION</span></div></section>
+    <section class="quick-band" aria-label="服务范围">
+      <div class="container quick-band-inner">
+        <span>EXCEL 自动化</span><b>+</b><span>数据看板</span><b>+</b><span>网页与工作台</span><b>+</b><span>微信小程序</span>
+      </div>
+    </section>
 
-    <section id="services" class="section container"><div class="section-head"><p class="eyebrow">SERVICES / 01</p><h2>从数据到结果，<br><em>每一步都更顺。</em></h2><p>不卖复杂的工具，只交付真正能被团队用起来的结果。</p></div><div class="service-grid"><article class="service-card featured"><span class="card-number">01</span><div class="icon">◒</div><h3>企业数据分析</h3><p>数据整理、清洗、分析与可视化，把分散的信息变成可以支持决策的业务洞察。</p><a href="#contact">了解服务 <span>↗</span></a></article><article class="service-card"><span class="card-number">02</span><div class="icon">▥</div><h3>报表自动化</h3><p>把重复的日报、周报、月报变成一套稳定的规则，自动生成、自动提醒。</p><a href="#contact">了解服务 <span>↗</span></a></article><article class="service-card"><span class="card-number">03</span><div class="icon">⌁</div><h3>工作台与小程序</h3><p>轻量的内部工作台、查询系统与微信小程序，让信息在需要时自然出现。</p><a href="#contact">了解服务 <span>↗</span></a></article></div></section>
+    <section class="section scenarios" id="scenarios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">常见问题场景 / 01</p><h2>这些重复工作，<br />可以重新设计。</h2></div>
+          <p>如果你的工作需要反复复制、核对、汇总或查找信息，通常就有优化空间。</p>
+        </div>
+        <div class="scenario-list">
+          <article class="scenario-item reveal">
+            <span class="scenario-index">01</span>
+            <i data-lucide="files" aria-hidden="true"></i>
+            <h3>多份表格反复汇总</h3>
+            <p>每天或每周从不同文件复制数据，公式容易错，版本也难管理。</p>
+            <strong>可改为：标准模板 + 自动汇总规则</strong>
+          </article>
+          <article class="scenario-item reveal">
+            <span class="scenario-index">02</span>
+            <i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>
+            <h3>经营情况难以看清</h3>
+            <p>数据很多，但关键指标分散，无法快速比较趋势、目标和异常。</p>
+            <strong>可改为：指标口径 + 可视化看板</strong>
+          </article>
+          <article class="scenario-item reveal">
+            <span class="scenario-index">03</span>
+            <i data-lucide="search-check" aria-hidden="true"></i>
+            <h3>信息查询依赖人工</h3>
+            <p>客户、项目或库存信息散落在聊天和文件里，每次查询都要找人。</p>
+            <strong>可改为：查询页面 + 内部工作台</strong>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section id="workflow" class="section section-dark"><div class="container workflow"><div><p class="eyebrow">HOW WE WORK / 02</p><h2>先理清问题，<br><em>再让系统工作。</em></h2></div><div class="steps"><div class="step"><span>01</span><div><h3>梳理现状</h3><p>了解你的数据来源、团队协作方式和最耗时的环节。</p></div></div><div class="step"><span>02</span><div><h3>设计规则</h3><p>把经验沉淀成清晰、可复用、可维护的工作流。</p></div></div><div class="step"><span>03</span><div><h3>交付上线</h3><p>从模板到系统，陪你跑通第一轮，再持续优化。</p></div></div></div></div></section>
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">标准服务 / 02</p><h2>从一个清楚的问题开始。</h2></div>
+          <p>以下周期为常规范围的参考时间。实际范围、修改次数和费用会在查看脱敏样例后确认。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card service-card-primary reveal">
+            <div class="service-top"><i data-lucide="sheet" aria-hidden="true"></i><span>参考周期 2-5 个工作日</span></div>
+            <h3>Excel 报表自动化</h3>
+            <p>适合固定日报、周报、月报以及多表合并、数据核对和重复计算。</p>
+            <ul>
+              <li>数据结构与字段整理</li>
+              <li>公式、透视表或脚本自动化</li>
+              <li>模板、操作说明与验收样例</li>
+            </ul>
+            <button class="service-select" type="button" data-service="Excel 报表自动化">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><i data-lucide="chart-column-big" aria-hidden="true"></i><span>参考周期 3-7 个工作日</span></div>
+            <h3>数据分析与看板</h3>
+            <p>适合销售、运营、财务、人力或项目进度等持续观察场景。</p>
+            <ul>
+              <li>数据清洗与指标口径</li>
+              <li>趋势、结构和异常分析</li>
+              <li>图表、筛选与导出方案</li>
+            </ul>
+            <button class="service-select" type="button" data-service="数据分析与看板">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><i data-lucide="monitor-smartphone" aria-hidden="true"></i><span>参考周期 5-10 个工作日</span></div>
+            <h3>企业网页与活动页</h3>
+            <p>适合服务介绍、作品展示、活动报名和轻量信息发布。</p>
+            <ul>
+              <li>页面结构与响应式界面</li>
+              <li>基础交互与表单方案</li>
+              <li>源码、部署与维护说明</li>
+            </ul>
+            <button class="service-select" type="button" data-service="企业网页与活动页">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><i data-lucide="panels-top-left" aria-hidden="true"></i><span>参考周期 7-15 个工作日</span></div>
+            <h3>内部工作台</h3>
+            <p>适合表单提交、数据查询、客户管理和轻量业务后台。</p>
+            <ul>
+              <li>角色与使用流程梳理</li>
+              <li>表格、表单和查询界面</li>
+              <li>数据接口与权限建议</li>
+            </ul>
+            <button class="service-select" type="button" data-service="内部工作台">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><i data-lucide="smartphone" aria-hidden="true"></i><span>参考周期 10-20 个工作日</span></div>
+            <h3>微信小程序</h3>
+            <p>适合移动端展示、查询、预约和信息提交等轻量业务。</p>
+            <ul>
+              <li>功能原型与页面开发</li>
+              <li>接口对接与测试清单</li>
+              <li>发布材料与后续维护建议</li>
+            </ul>
+            <button class="service-select" type="button" data-service="微信小程序">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
+          </article>
+          <aside class="scope-note reveal">
+            <p class="eyebrow">报价依据</p>
+            <h3>先确认范围，<br />再给出准确报价。</h3>
+            <dl>
+              <div><dt>数据情况</dt><dd>格式、数量、质量与敏感程度</dd></div>
+              <div><dt>功能复杂度</dt><dd>页面、规则、权限与系统对接</dd></div>
+              <div><dt>交付要求</dt><dd>周期、修改次数、部署与维护</dd></div>
+            </dl>
+            <a href="#brief">生成需求摘要 <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-    <section id="cases" class="section container cases"><div class="section-head"><p class="eyebrow">SELECTED OUTCOMES / 03</p><h2>看得见的效率，<em>留得住的能力。</em></h2></div><div class="case-grid"><div class="case-main"><div class="case-meta"><span>运营团队 · 报表自动化</span><span>2024</span></div><h3>让每周一的报表，<br>在周五下午就准备好。</h3><div class="case-stats"><strong>14.5h</strong><span>每周节省工时</span><strong>−62%</strong><span>人工整理环节</span></div></div><div class="case-side"><div class="mini-label">DATA POINT</div><strong>98%</strong><p>数据准确率</p><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div></div></div></section>
+    <section class="section examples" id="examples">
+      <div class="container">
+        <div class="section-heading section-heading-light reveal">
+          <div><p class="eyebrow">演示项目 / 03</p><h2>先看思路，再谈你的需求。</h2></div>
+          <p>以下均为模拟数据和演示方案，不代表真实客户业绩。正式合作会使用你的脱敏样例进行验证。</p>
+        </div>
+        <div class="example-feature reveal">
+          <div class="example-image">
+            <img src="assets/data-workspace.jpg" alt="电脑屏幕上展示多项数据图表" width="1600" height="1067" loading="lazy" />
+            <span>数据看板场景示意</span>
+          </div>
+          <div class="example-copy">
+            <p class="example-tag">DEMO 01 · 销售周报自动化</p>
+            <h3>从多份流水表，到一份可更新的周报。</h3>
+            <div class="example-row"><span>原始问题</span><p>不同人员提交不同格式，人工复制、计算、核对后才能汇报。</p></div>
+            <div class="example-row"><span>方案结构</span><p>统一输入模板，自动清洗字段，按区域和产品汇总并生成图表。</p></div>
+            <div class="example-row"><span>交付内容</span><p>报表模板、更新规则、异常提示、操作说明和验收样例。</p></div>
+          </div>
+        </div>
+        <div class="example-grid">
+          <article class="example-mini reveal">
+            <div class="mini-visual mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="example-tag">DEMO 02 · 门店经营看板</p>
+            <h3>把销售、客单和目标进度放在同一个视图。</h3>
+            <p>适合需要按日期、门店和品类筛选的经营复盘。</p>
+          </article>
+          <article class="example-mini reveal">
+            <div class="mini-visual mini-table" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="example-tag">DEMO 03 · 客户查询工作台</p>
+            <h3>让常用信息可以搜索、筛选和规范记录。</h3>
+            <p>适合客户、项目、库存或售后记录的轻量管理。</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section id="contact" class="section contact-band"><div class="container contact-inner"><div><p class="eyebrow">START A CONVERSATION / 04</p><h2>有一个重复的工作，<br><em>值得被重新设计。</em></h2></div><div class="contact-right"><p>告诉我们你正在处理什么，我们会在 1 个工作日内回复一个清晰的初步建议。</p><a class="button button-light" href="mailto:13678392634@163.com">发邮件给我们 <span>↗</span></a><small>13678392634@163.com</small></div></div></section>
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">合作流程 / 04</p><h2>每一步都有明确结果。</h2></div>
+          <p>从需求到验收均以双方确认的范围为准。来自电商平台的订单，全程在对应平台内沟通与交易。</p>
+        </div>
+        <ol class="process-list">
+          <li class="reveal"><span>01</span><div><h3>描述问题</h3><p>说明当前做法、卡点、使用人和期望结果。</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>提供脱敏样例</h3><p>先用少量示例确认数据结构，不发送不必要的敏感信息。</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>确认范围与下单</h3><p>明确交付物、周期、修改次数、报价和验收标准。</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>阶段演示</h3><p>先验证关键规则和主流程，再继续完善细节。</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>验收与交付</h3><p>交付约定文件、使用说明，并完成约定范围内的调整。</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="eyebrow">关于 Felix / 05</p>
+          <h2>直接沟通，<br />直接参与交付。</h2>
+          <p>Felix Data Studio 是一个独立的数据与效率工具服务项目。我会直接参与需求梳理、方案设计、开发和交付，优先解决真正影响日常工作的环节。</p>
+        </div>
+        <div class="assurance-list">
+          <div class="assurance reveal"><i data-lucide="file-code-2" aria-hidden="true"></i><div><h3>交付可维护</h3><p>按约定交付源文件、字段说明和使用文档，减少后续依赖。</p></div></div>
+          <div class="assurance reveal"><i data-lucide="scan-search" aria-hidden="true"></i><div><h3>先小范围验证</h3><p>复杂项目先验证关键规则，避免方向错误后再大面积返工。</p></div></div>
+          <div class="assurance reveal"><i data-lucide="shield" aria-hidden="true"></i><div><h3>明确数据边界</h3><p>不承接非法采集、绕过权限、账号共享或未经授权的数据处理。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal"><p class="eyebrow">常见问题 / 06</p><h2>合作前常被问到的事。</h2><p>没有找到你的问题，可以先生成一份需求摘要，在你看到 Felix 服务的对应平台内沟通。</p></div>
+        <div class="faq-list">
+          <details class="reveal"><summary>开始前需要准备什么？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>准备一份脱敏后的原始样例、当前处理步骤和一份理想结果示例。没有完整需求文档也可以，从实际问题开始梳理。</p></details>
+          <details class="reveal"><summary>Excel 和 WPS 都能使用吗？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>基础公式和模板通常可以兼容；宏、脚本和高级功能需要根据系统与版本确认，方案中会提前说明限制。</p></details>
+          <details class="reveal"><summary>是否交付源码和说明文档？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>以订单约定为准。常规交付会明确包含哪些源文件、部署说明、操作文档和后续维护范围。</p></details>
+          <details class="reveal"><summary>服务器、域名和小程序认证费用包含吗？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>第三方服务费用通常由客户直接支付，不默认包含在开发报价中；需要购买前会列明项目和预估费用。</p></details>
+          <details class="reveal"><summary>数据会上传到哪里？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>本页需求表单不会上传数据。正式项目会根据方案确认本地处理、客户环境或指定服务，并约定数据保存与删除方式。</p></details>
+          <details class="reveal"><summary>需求变化后怎么处理？ <i data-lucide="plus" aria-hidden="true"></i></summary><p>约定范围内按确认的修改次数调整；新增功能会先说明对周期和费用的影响，确认后再继续。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brief" id="brief">
+      <div class="container">
+        <div class="section-heading brief-heading reveal">
+          <div><p class="eyebrow">需求摘要 / 07</p><h2>用两分钟，把问题说清楚。</h2></div>
+          <p>填写内容只在当前浏览器中整理，不会自动发送或保存。生成后可复制到你看到 Felix 服务的平台对话中。</p>
+        </div>
+        <div class="brief-layout">
+          <form class="brief-form" id="brief-form">
+            <div class="field">
+              <label for="service">需要哪类服务</label>
+              <select id="service" name="service" required>
+                <option value="">请选择</option>
+                <option>Excel 报表自动化</option>
+                <option>数据分析与看板</option>
+                <option>企业网页与活动页</option>
+                <option>内部工作台</option>
+                <option>微信小程序</option>
+                <option>暂不确定，需要建议</option>
+              </select>
+            </div>
+            <div class="field field-wide">
+              <label for="problem">当前最想解决的问题</label>
+              <textarea id="problem" name="problem" rows="4" placeholder="例如：每周需要把 8 份门店表格合并成销售周报，人工整理约 3 小时。" required></textarea>
+            </div>
+            <div class="field">
+              <label for="result">期望交付结果</label>
+              <input id="result" name="result" type="text" placeholder="例如：可重复更新的 Excel 模板" required />
+            </div>
+            <div class="field">
+              <label for="timeline">期望完成时间</label>
+              <select id="timeline" name="timeline" required>
+                <option value="">请选择</option>
+                <option>1 周内</option>
+                <option>2 周内</option>
+                <option>1 个月内</option>
+                <option>时间可以协商</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget">预算范围</label>
+              <select id="budget" name="budget">
+                <option>暂未确定</option>
+                <option>500 元以内</option>
+                <option>500-2000 元</option>
+                <option>2000-5000 元</option>
+                <option>5000 元以上</option>
+              </select>
+            </div>
+            <div class="field checkbox-field">
+              <input id="sample" name="sample" type="checkbox" />
+              <label for="sample">我可以提供脱敏后的样例</label>
+            </div>
+            <div class="field field-wide form-note"><i data-lucide="info" aria-hidden="true"></i><p>请勿填写身份证号、手机号、账号密码、客户名单等敏感信息。这里只需要描述数据结构和问题。</p></div>
+            <button class="button button-dark field-wide" type="submit">生成需求摘要 <i data-lucide="wand-sparkles" aria-hidden="true"></i></button>
+          </form>
+          <aside class="brief-output" id="brief-output" aria-live="polite">
+            <div class="output-empty" id="output-empty"><i data-lucide="clipboard-list" aria-hidden="true"></i><h3>需求摘要会显示在这里</h3><p>填写左侧内容后生成，确认无敏感信息再复制。</p></div>
+            <div class="output-result" id="output-result" hidden>
+              <div class="output-head"><h3>需求摘要</h3><button class="icon-button" id="copy-brief" type="button" title="复制需求摘要" aria-label="复制需求摘要"><i data-lucide="copy" aria-hidden="true"></i></button></div>
+              <textarea id="brief-text" rows="13" readonly aria-label="生成的需求摘要"></textarea>
+              <p id="copy-status" role="status"></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer container"><span>© 2024 Felix Data Studio</span><span>数据 · 流程 · 产品</span><a href="#top">回到顶部 ↑</a></footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">F</span><span>Felix Data Studio</span></a><p>数据分析、办公自动化与轻量数字工具服务。</p></div>
+      <nav aria-label="页脚导航"><a href="#services">服务</a><a href="#process">流程</a><a href="#brief">需求摘要</a><a href="privacy.html">隐私与服务边界</a></nav>
+      <div class="footer-meta"><span>© <span id="current-year"></span> Felix Data Studio</span><a href="#top">回到顶部 <i data-lucide="arrow-up" aria-hidden="true"></i></a></div>
+    </div>
+  </footer>
 </body>
 </html>
