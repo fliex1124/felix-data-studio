@@ -482,6 +482,11 @@ svg {
   background: var(--lime);
 }
 
+.service-card-visual {
+  border-color: #efb7ac;
+  background: #fff1ed;
+}
+
 .service-top {
   display: flex;
   align-items: center;
@@ -560,6 +565,12 @@ svg {
 }
 
 .scope-note {
+  grid-column: 1 / -1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.75fr) auto;
+  align-items: center;
+  gap: 44px;
   background: var(--ink);
   color: var(--white);
 }
@@ -569,11 +580,14 @@ svg {
 }
 
 .scope-note h3 {
-  margin-top: 28px;
+  margin: 16px 0 0;
 }
 
 .scope-note dl {
-  margin: 34px 0 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
 }
 
 .scope-note dl > div {
@@ -601,6 +615,7 @@ svg {
   color: var(--white);
   font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .examples {
@@ -690,7 +705,7 @@ svg {
 
 .example-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 16px;
 }
@@ -766,6 +781,42 @@ svg {
 .mini-table i:nth-child(3)::before { width: 75%; background: var(--lime); }
 .mini-table i:nth-child(4)::before { width: 40%; }
 .mini-table i:nth-child(5)::before { width: 62%; background: var(--coral); }
+
+.mini-poster {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid #506058;
+  background: #f4efe9;
+}
+
+.mini-poster span {
+  grid-row: 1 / -1;
+  border-radius: 50% 50% 8px 8px;
+  background: var(--coral);
+}
+
+.mini-poster i {
+  background: #b7c68d;
+}
+
+.mini-poster i:first-of-type {
+  width: 78%;
+  background: var(--ink);
+}
+
+.mini-poster i:nth-of-type(2) {
+  width: 100%;
+  background: #d6cabf;
+}
+
+.mini-poster i:nth-of-type(3) {
+  width: 56%;
+  background: var(--lime);
+}
 
 .process {
   background: var(--white);
@@ -1248,6 +1299,15 @@ svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .example-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scope-note {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .process-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1399,6 +1459,11 @@ svg {
 
   .service-card > p {
     min-height: 0;
+  }
+
+  .scope-note dl {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .example-feature {
