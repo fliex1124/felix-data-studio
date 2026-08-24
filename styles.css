@@ -457,10 +457,53 @@ svg {
   background: var(--paper);
 }
 
+.service-groups {
+  display: grid;
+  gap: 64px;
+}
+
+.service-group {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.service-group-heading {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-content: start;
+}
+
+.service-group-heading > span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.service-group-heading h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.service-group-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+
+.service-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .service-card,
@@ -485,6 +528,27 @@ svg {
 .service-card-visual {
   border-color: #efb7ac;
   background: #fff1ed;
+}
+
+.service-card-report {
+  border-color: #b9cfd8;
+  background: #edf7fa;
+}
+
+.service-card-copy {
+  border-color: #ded0a9;
+  background: #fff8e7;
+}
+
+.service-card {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  border-color: #9aa89f;
+  box-shadow: 0 14px 34px rgba(20, 32, 29, 0.08);
+  transform: translateY(-3px);
 }
 
 .service-top {
@@ -618,6 +682,72 @@ svg {
   white-space: nowrap;
 }
 
+.scope-note-wide {
+  margin-top: 16px;
+}
+
+.visual-bundle {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.35fr) minmax(180px, 0.55fr);
+  gap: 36px;
+  align-items: center;
+  margin-top: 64px;
+  padding: 34px;
+  border: 1px solid #e9a99d;
+  border-radius: 6px;
+  background: #f7d8d1;
+}
+
+.bundle-intro .eyebrow {
+  margin-bottom: 10px;
+  color: #83483e;
+}
+
+.bundle-intro h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.bundle-intro > p:last-child {
+  margin: 12px 0 0;
+  color: #654b45;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.visual-bundle ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visual-bundle li {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(20, 32, 29, 0.16);
+  background: rgba(255, 255, 255, 0.45);
+  color: #493732;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.visual-bundle li svg {
+  width: 20px;
+  height: 20px;
+  color: #8d4438;
+}
+
+.visual-bundle .button {
+  width: 100%;
+}
+
 .examples {
   background: var(--ink);
   color: var(--white);
@@ -629,6 +759,104 @@ svg {
 
 .section-heading-light > p {
   color: #bac5c0;
+}
+
+.case-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #3d4b45;
+}
+
+.case-tab {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: -1px;
+  padding: 0 18px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #aebbb5;
+  font-size: 14px;
+  font-weight: 800;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.case-tab:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.case-tab.is-active {
+  border-bottom-color: var(--lime);
+  color: var(--white);
+}
+
+.case-tab span {
+  display: inline-grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  padding: 0 5px;
+  border: 1px solid #56675f;
+  border-radius: 50%;
+  color: #cbd5d0;
+  font-size: 11px;
+}
+
+.case-tab.is-active span {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.case-tab:focus-visible {
+  outline-color: var(--lime);
+  outline-offset: -3px;
+}
+
+.case-panel[hidden] {
+  display: none;
+}
+
+.real-case-empty {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 28px;
+  border: 1px dashed #52635b;
+  border-radius: 6px;
+  background: #192722;
+  text-align: center;
+}
+
+.real-case-empty > svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  color: var(--lime);
+}
+
+.real-case-empty h3 {
+  margin: 18px 0 12px;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.real-case-empty > p:not(.example-tag) {
+  max-width: 610px;
+  margin: 0;
+  color: #aebbb5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.real-case-empty .button {
+  margin-top: 28px;
 }
 
 .example-feature {
@@ -1299,6 +1527,25 @@ svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .service-group {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .service-group-heading {
+    max-width: 540px;
+  }
+
+  .visual-bundle {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .visual-bundle .button {
+    width: max-content;
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
   .example-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1452,6 +1699,26 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .service-groups {
+    gap: 48px;
+  }
+
+  .service-group {
+    padding-top: 24px;
+  }
+
+  .visual-bundle {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 48px;
+  }
+
+  .visual-bundle .button {
+    width: max-content;
+    grid-column: auto;
+    justify-self: start;
+  }
+
   .service-card,
   .scope-note {
     min-height: 0;
@@ -1468,6 +1735,10 @@ svg {
 
   .example-feature {
     min-height: 0;
+  }
+
+  .real-case-empty {
+    min-height: 360px;
   }
 
   .example-image {
@@ -1567,6 +1838,7 @@ svg {
 
   .service-card,
   .scope-note,
+  .visual-bundle,
   .brief-form,
   .brief-output,
   .example-copy,
@@ -1576,6 +1848,37 @@ svg {
 
   .service-top {
     align-items: flex-start;
+  }
+
+  .service-group-heading {
+    grid-template-columns: 28px 1fr;
+  }
+
+  .visual-bundle ul {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-bundle .button {
+    width: 100%;
+  }
+
+  .case-tabs {
+    width: 100%;
+  }
+
+  .case-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .real-case-empty {
+    min-height: 340px;
+    padding: 38px 24px;
+  }
+
+  .real-case-empty h3 {
+    font-size: 24px;
   }
 
   .example-image {
