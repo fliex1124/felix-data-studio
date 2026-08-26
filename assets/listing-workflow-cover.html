@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>办公流程自动化服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover { position: relative; width: 1024px; height: 1024px; overflow: hidden; color: #fff; background: #13211c; }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+    }
+    .cover::after { position: absolute; top: 0; right: 0; width: 360px; height: 100%; background: #1a2c25; content: ""; }
+    .workflow {
+      position: absolute;
+      z-index: 1;
+      top: 190px;
+      right: 30px;
+      width: 360px;
+      height: 430px;
+      padding: 38px 28px;
+      border: 1px solid rgba(255, 255, 255, .38);
+      background: #edf7fa;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+      transform: rotate(2deg);
+    }
+    .flow-row { position: relative; display: flex; align-items: center; justify-content: space-between; margin-top: 22px; }
+    .flow-row::before { position: absolute; z-index: 0; left: 56px; right: 56px; top: 36px; height: 4px; background: #9fb2aa; content: ""; }
+    .node { position: relative; z-index: 1; display: grid; width: 76px; height: 76px; place-items: center; border: 2px solid #13211c; border-radius: 50%; background: #fff; color: #13211c; font-size: 18px; font-weight: 800; }
+    .node.rule { border-color: #c4ef50; background: #c4ef50; }
+    .node.output { border-color: #f37a68; background: #f37a68; }
+    .rule-card { margin-top: 42px; padding: 25px; border: 1px solid #d1dcda; background: #fff; }
+    .rule-card span { display: block; width: 220px; height: 15px; background: #13211c; }
+    .rule-card span + span { width: 250px; height: 11px; margin-top: 17px; background: #9fb2aa; }
+    .rule-card span:nth-child(3) { width: 196px; }
+    .rule-card span:last-child { width: 234px; }
+    .status-row { display: flex; gap: 10px; margin-top: 28px; }
+    .status-row span { flex: 1; height: 48px; border: 1px solid #9fb2aa; background: #dbe6e1; }
+    .status-row span:first-child { background: #c4ef50; }
+    .status-row span:last-child { background: #f37a68; }
+    .workflow-label {
+      position: absolute;
+      z-index: 2;
+      right: 6px;
+      bottom: 14px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: #13211c;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .workflow-label strong { color: #c4ef50; }
+    .inner { position: relative; z-index: 2; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 92px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 610px; margin: 28px 0 20px; font-size: 68px; line-height: 1.08; letter-spacing: 0; }
+    .subtitle { max-width: 610px; margin: 0; color: #dbe6e1; font-size: 26px; font-weight: 600; }
+    .features { display: flex; max-width: 640px; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .9); font-size: 20px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 20px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="workflow" aria-hidden="true">
+      <div class="flow-row"><span class="node">输入</span><span class="node rule">规则</span><span class="node output">输出</span></div>
+      <div class="rule-card"><span></span><span></span><span></span><span></span></div>
+      <div class="status-row"><span></span><span></span><span></span></div>
+      <div class="workflow-label">把重复步骤变成 <strong>稳定流程</strong></div>
+    </div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">办公效率服务</div>
+      <h1>办公流程<br />自动化</h1>
+      <p class="subtitle">步骤梳理 · 规则固化 · 模板与轻量工具</p>
+      <div class="features">
+        <span>流程评估</span><span>规则文档</span><span>模板脚本</span><span>操作说明</span>
+      </div>
+      <div class="footer"><span>先评估流程，再确认实现方式</span><strong>按实际范围报价</strong></div>
+    </div>
+  </main>
+</body>
+</html>

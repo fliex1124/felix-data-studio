@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>微信小程序开发服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover { position: relative; width: 1024px; height: 1024px; overflow: hidden; color: #fff; background: #13211c; }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+    }
+    .cover::after { position: absolute; top: 0; right: 0; width: 360px; height: 100%; background: #1a2c25; content: ""; }
+    .phone {
+      position: absolute;
+      z-index: 1;
+      top: 154px;
+      right: 68px;
+      width: 270px;
+      height: 520px;
+      overflow: hidden;
+      border: 10px solid #13211c;
+      border-radius: 32px;
+      background: #edf7fa;
+      box-shadow: 0 28px 75px rgba(0, 0, 0, .42);
+      transform: rotate(3deg);
+    }
+    .phone-top { display: flex; height: 54px; align-items: center; justify-content: space-between; padding: 0 20px; background: #fff; }
+    .phone-top::before { width: 98px; height: 14px; background: #13211c; content: ""; }
+    .phone-top::after { width: 42px; height: 19px; border: 2px solid #9fb2aa; border-radius: 10px; content: ""; }
+    .hero { height: 142px; padding: 28px 22px; background: #c4ef50; }
+    .hero::before { display: block; width: 158px; height: 22px; background: #13211c; content: ""; }
+    .hero::after { display: block; width: 112px; height: 12px; margin-top: 18px; background: rgba(19, 33, 28, .55); content: ""; }
+    .actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px; }
+    .action { height: 88px; padding: 17px; border: 1px solid #d1dcda; background: #fff; }
+    .action::before { display: block; width: 30px; height: 30px; border-radius: 7px; background: #f37a68; content: ""; }
+    .action::after { display: block; width: 62px; height: 9px; margin-top: 12px; background: #9fb2aa; content: ""; }
+    .action:nth-child(2)::before { background: #13211c; }
+    .action:nth-child(3)::before { background: #c4ef50; }
+    .action:nth-child(4)::before { background: #9fb2aa; }
+    .form-preview { margin: 0 20px; padding: 16px; border: 1px solid #d1dcda; background: #fff; }
+    .form-preview span { display: block; height: 13px; background: #13211c; }
+    .form-preview span + span { height: 28px; margin-top: 12px; border: 1px solid #d1dcda; background: #edf7fa; }
+    .form-preview span:last-child { width: 76px; height: 25px; margin-left: auto; background: #c4ef50; }
+    .mini-label {
+      position: absolute;
+      z-index: 2;
+      right: 2px;
+      bottom: 14px;
+      width: 248px;
+      padding: 13px 12px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: #13211c;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .mini-label strong { color: #c4ef50; }
+    .inner { position: relative; z-index: 2; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 92px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 620px; margin: 28px 0 20px; font-size: 70px; line-height: 1.08; letter-spacing: 0; }
+    .subtitle { max-width: 610px; margin: 0; color: #dbe6e1; font-size: 26px; font-weight: 600; }
+    .features { display: flex; max-width: 640px; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .9); font-size: 20px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 20px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="phone" aria-hidden="true">
+      <div class="phone-top"></div>
+      <div class="hero"></div>
+      <div class="actions"><span class="action"></span><span class="action"></span><span class="action"></span><span class="action"></span></div>
+      <div class="form-preview"><span></span><span></span><span></span></div>
+      <div class="mini-label">从需求到测试 <strong>按范围交付</strong></div>
+    </div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">移动端业务工具</div>
+      <h1>微信小程序<br />定制开发</h1>
+      <p class="subtitle">信息展示 · 查询预约 · 表单提交</p>
+      <div class="features">
+        <span>功能原型</span><span>页面开发</span><span>接口对接</span><span>测试材料</span>
+      </div>
+      <div class="footer"><span>认证、服务器等费用提前说明</span><strong>不承诺审核通过</strong></div>
+    </div>
+  </main>
+</body>
+</html>

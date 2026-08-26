@@ -29,6 +29,37 @@ document.addEventListener("click", (event) => {
 
 const serviceField = document.querySelector("#service");
 const problemField = document.querySelector("#problem");
+const sourceField = document.querySelector("#source");
+
+const sourceLabels = new Map([
+  ["xianyu", "闲鱼"],
+  ["taobao", "淘宝"],
+  ["pinduoduo", "拼多多"],
+  ["xiaohongshu", "小红书"]
+]);
+
+const serviceCodes = new Map([
+  ["FDS-S01", "Excel 报表自动化"],
+  ["FDS-S02", "数据分析与看板"],
+  ["FDS-S03", "企业网页与活动页"],
+  ["FDS-S04", "内部工作台"],
+  ["FDS-S05", "微信小程序"],
+  ["FDS-S06", "PPT 与商业报告"],
+  ["FDS-S07", "商品文案与卖点梳理"],
+  ["FDS-S08", "电商与社媒视觉"],
+  ["FDS-P01", "店铺视觉套装"]
+]);
+
+const entryParams = new URLSearchParams(window.location.search);
+const sourceLabel = sourceLabels.get(entryParams.get("source")) || "官网直接访问";
+const requestedService = serviceCodes.get(entryParams.get("service")) || entryParams.get("service");
+
+if (sourceField) sourceField.value = sourceLabel;
+
+if (serviceField && requestedService) {
+  const hasRequestedService = Array.from(serviceField.options).some((option) => option.value === requestedService);
+  if (hasRequestedService) serviceField.value = requestedService;
+}
 
 document.querySelectorAll("[data-service]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -100,6 +131,7 @@ briefForm?.addEventListener("submit", (event) => {
   const summary = [
     "Felix 项目需求摘要",
     "",
+    `咨询来源：${formData.get("source") || "官网直接访问"}`,
     `服务类型：${formData.get("service")}`,
     `当前问题：${formData.get("problem")}`,
     `期望结果：${formData.get("result")}`,

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>短视频封面与社交媒体配图服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover { position: relative; width: 1024px; height: 1024px; overflow: hidden; color: #fff; background: #13211c; }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+    }
+    .cover::after { position: absolute; top: 0; right: 0; width: 360px; height: 100%; background: #1a2c25; content: ""; }
+    .media-set { position: absolute; z-index: 1; top: 176px; right: 36px; width: 346px; height: 510px; }
+    .vertical-cover {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      width: 246px;
+      height: 420px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .4);
+      background: #edf7fa;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+      transform: rotate(4deg);
+    }
+    .visual { height: 196px; background: #c4ef50; }
+    .visual::before { display: block; width: 72px; height: 72px; margin: 0 auto; border-radius: 50%; background: #13211c; transform: translateY(62px); content: ""; }
+    .visual::after { display: block; width: 0; height: 0; margin: 12px auto 0; border-top: 13px solid transparent; border-bottom: 13px solid transparent; border-left: 20px solid #c4ef50; transform: translate(4px, -3px); content: ""; }
+    .cover-copy { padding: 28px 24px; }
+    .cover-copy span { display: block; width: 178px; height: 20px; background: #13211c; }
+    .cover-copy span + span { width: 132px; height: 12px; margin-top: 16px; background: #9fb2aa; }
+    .cover-copy span:last-child { width: 156px; }
+    .square-post {
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+      width: 188px;
+      height: 188px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      background: #f37a68;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .3);
+      transform: rotate(-5deg);
+    }
+    .square-post::before { display: block; width: 116px; height: 20px; background: #13211c; box-shadow: 0 38px 0 #fff, 0 70px 0 rgba(255, 255, 255, .72); content: ""; }
+    .media-label {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: #13211c;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .media-label strong { color: #c4ef50; }
+    .inner { position: relative; z-index: 2; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 92px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 610px; margin: 28px 0 20px; font-size: 64px; line-height: 1.09; letter-spacing: 0; }
+    .subtitle { max-width: 610px; margin: 0; color: #dbe6e1; font-size: 26px; font-weight: 600; }
+    .features { display: flex; max-width: 640px; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .9); font-size: 20px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 21px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="media-set" aria-hidden="true">
+      <div class="vertical-cover"><div class="visual"></div><div class="cover-copy"><span></span><span></span><span></span></div></div>
+      <div class="square-post"></div>
+      <div class="media-label">封面与配图 <strong>统一视觉</strong></div>
+    </div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">新媒体视觉服务</div>
+      <h1>短视频封面与<br />社交媒体配图</h1>
+      <p class="subtitle">内容封面 · 活动配图 · 系列视觉模板</p>
+      <div class="features">
+        <span>信息排版</span><span>系列统一</span><span>多尺寸导出</span><span>源文件可选</span>
+      </div>
+      <div class="footer"><span>只提供封面和静态配图</span><strong>不含拍摄剪辑</strong></div>
+    </div>
+  </main>
+</body>
+</html>

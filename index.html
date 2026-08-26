@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260824" />
+  <link rel="stylesheet" href="styles.css?v=20260826" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <script src="script.js?v=20260824" defer></script>
+  <script src="script.js?v=20260826" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -96,7 +96,7 @@
     <section class="section services" id="services">
       <div class="container">
         <div class="section-heading reveal">
-          <div><p class="eyebrow">标准服务 / 02</p><h2>从一个清楚的问题开始。</h2></div>
+          <div><p class="eyebrow">统一服务目录 / 02</p><h2>从一个清楚的问题开始。</h2></div>
           <p>以下周期为常规范围的参考时间。实际范围、修改次数和费用会在查看脱敏样例后确认。</p>
         </div>
         <div class="service-groups">
@@ -106,8 +106,8 @@
               <div><h3 id="data-services-title">数据与效率</h3><p>把重复整理、统计和汇报工作变成可复用的流程。</p></div>
             </div>
             <div class="service-grid service-grid-two">
-              <article class="service-card service-card-primary reveal">
-                <div class="service-top"><i data-lucide="sheet" aria-hidden="true"></i><span>参考周期 2-5 个工作日</span></div>
+              <article class="service-card service-card-primary reveal" data-service-id="FDS-S01">
+                <div class="service-top"><span class="service-identity"><i data-lucide="sheet" aria-hidden="true"></i><b>FDS-S01</b></span><span>参考周期 2-5 个工作日</span></div>
                 <h3>Excel 报表自动化</h3>
                 <p>适合固定日报、周报、月报以及多表合并、数据核对和重复计算。</p>
                 <ul>
@@ -117,8 +117,8 @@
                 </ul>
                 <button class="service-select" type="button" data-service="Excel 报表自动化">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
               </article>
-              <article class="service-card reveal">
-                <div class="service-top"><i data-lucide="chart-column-big" aria-hidden="true"></i><span>参考周期 3-7 个工作日</span></div>
+              <article class="service-card reveal" data-service-id="FDS-S02">
+                <div class="service-top"><span class="service-identity"><i data-lucide="chart-column-big" aria-hidden="true"></i><b>FDS-S02</b></span><span>参考周期 3-7 个工作日</span></div>
                 <h3>数据分析与看板</h3>
                 <p>适合销售、运营、财务、人力或项目进度等持续观察场景。</p>
                 <ul>
@@ -137,8 +137,8 @@
               <div><h3 id="tool-services-title">网页与业务工具</h3><p>围绕真实使用流程，搭建可访问、可维护的轻量数字工具。</p></div>
             </div>
             <div class="service-grid">
-              <article class="service-card reveal">
-                <div class="service-top"><i data-lucide="monitor-smartphone" aria-hidden="true"></i><span>参考周期 5-10 个工作日</span></div>
+              <article class="service-card reveal" data-service-id="FDS-S03">
+                <div class="service-top"><span class="service-identity"><i data-lucide="monitor-smartphone" aria-hidden="true"></i><b>FDS-S03</b></span><span>参考周期 5-10 个工作日</span></div>
                 <h3>企业网页与活动页</h3>
                 <p>适合服务介绍、作品展示、活动报名和轻量信息发布。</p>
                 <ul>
@@ -148,8 +148,8 @@
                 </ul>
                 <button class="service-select" type="button" data-service="企业网页与活动页">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
               </article>
-              <article class="service-card reveal">
-                <div class="service-top"><i data-lucide="panels-top-left" aria-hidden="true"></i><span>参考周期 7-15 个工作日</span></div>
+              <article class="service-card reveal" data-service-id="FDS-S04">
+                <div class="service-top"><span class="service-identity"><i data-lucide="panels-top-left" aria-hidden="true"></i><b>FDS-S04</b></span><span>参考周期 7-15 个工作日</span></div>
                 <h3>内部工作台</h3>
                 <p>适合表单提交、数据查询、客户管理和轻量业务后台。</p>
                 <ul>
@@ -159,8 +159,8 @@
                 </ul>
                 <button class="service-select" type="button" data-service="内部工作台">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
               </article>
-              <article class="service-card reveal">
-                <div class="service-top"><i data-lucide="smartphone" aria-hidden="true"></i><span>参考周期 10-20 个工作日</span></div>
+              <article class="service-card reveal" data-service-id="FDS-S05">
+                <div class="service-top"><span class="service-identity"><i data-lucide="smartphone" aria-hidden="true"></i><b>FDS-S05</b></span><span>参考周期 10-20 个工作日</span></div>
                 <h3>微信小程序</h3>
                 <p>适合移动端展示、查询、预约和信息提交等轻量业务。</p>
                 <ul>
@@ -179,8 +179,8 @@
               <div><h3 id="content-services-title">商业内容与视觉</h3><p>从信息结构到视觉成品，统一汇报、商品与店铺表达。</p></div>
             </div>
             <div class="service-grid">
-              <article class="service-card service-card-report reveal">
-                <div class="service-top"><i data-lucide="presentation" aria-hidden="true"></i><span>常规范围 2-5 个工作日</span></div>
+              <article class="service-card service-card-report reveal" data-service-id="FDS-S06">
+                <div class="service-top"><span class="service-identity"><i data-lucide="presentation" aria-hidden="true"></i><b>FDS-S06</b></span><span>常规范围 2-5 个工作日</span></div>
                 <h3>PPT 与商业报告</h3>
                 <p>适合工作汇报、项目提案、经营复盘与研究报告的结构梳理和视觉优化。</p>
                 <ul>
@@ -190,8 +190,8 @@
                 </ul>
                 <button class="service-select" type="button" data-service="PPT 与商业报告">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
               </article>
-              <article class="service-card service-card-copy reveal">
-                <div class="service-top"><i data-lucide="text-quote" aria-hidden="true"></i><span>参考周期 2-4 个工作日</span></div>
+              <article class="service-card service-card-copy reveal" data-service-id="FDS-S07">
+                <div class="service-top"><span class="service-identity"><i data-lucide="text-quote" aria-hidden="true"></i><b>FDS-S07</b></span><span>参考周期 2-4 个工作日</span></div>
                 <h3>商品文案与卖点梳理</h3>
                 <p>适合商品上新、详情页改版和活动推广，先理清受众、场景与产品事实。</p>
                 <ul>
@@ -201,8 +201,8 @@
                 </ul>
                 <button class="service-select" type="button" data-service="商品文案与卖点梳理">选择此服务 <i data-lucide="arrow-down" aria-hidden="true"></i></button>
               </article>
-              <article class="service-card service-card-visual reveal">
-                <div class="service-top"><i data-lucide="palette" aria-hidden="true"></i><span>单项参考 2-4 个工作日</span></div>
+              <article class="service-card service-card-visual reveal" data-service-id="FDS-S08">
+                <div class="service-top"><span class="service-identity"><i data-lucide="palette" aria-hidden="true"></i><b>FDS-S08</b></span><span>单项参考 2-4 个工作日</span></div>
                 <h3>电商与社媒视觉</h3>
                 <p>适合商品上新、活动推广与内容发布，统一不同触点的视觉风格。</p>
                 <ul>
@@ -215,7 +215,7 @@
             </div>
           </section>
         </div>
-        <div class="visual-bundle reveal">
+        <div class="visual-bundle reveal" data-service-id="FDS-P01">
           <div class="bundle-intro"><p class="eyebrow">组合套餐</p><h3>店铺视觉套装</h3><p>把零散设计需求整合成一次完整上新，视觉与文案使用同一套信息逻辑。</p></div>
           <ul>
             <li><i data-lucide="badge" aria-hidden="true"></i><span>店铺头像与基础视觉</span></li>
@@ -235,6 +235,39 @@
           </dl>
           <a href="#brief">生成需求摘要 <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </aside>
+        <div class="channel-hub" id="channels">
+          <div class="channel-heading reveal">
+            <div><p class="eyebrow">服务渠道</p><h3>一套服务标准，适配不同平台。</h3></div>
+            <p>官网负责沉淀服务、案例和交付边界；各平台根据用户习惯调整商品标题、组合方式与内容形式。</p>
+          </div>
+          <div class="channel-grid">
+            <article class="channel-card channel-card-xianyu reveal">
+              <div class="channel-card-top"><i data-lucide="store" aria-hidden="true"></i><span class="channel-status is-active">首批上架中</span></div>
+              <h4>闲鱼</h4>
+              <p>以清晰的小范围服务入口承接咨询，先确认需求、交付物和完整项目报价。</p>
+              <span class="channel-meta">当前：11 个商品方向</span>
+            </article>
+            <article class="channel-card channel-card-taobao reveal">
+              <div class="channel-card-top"><i data-lucide="shopping-bag" aria-hidden="true"></i><span class="channel-status">筹备中</span></div>
+              <h4>淘宝</h4>
+              <p>后续将服务拆分为规格明确的基础版、进阶版和定制版套餐。</p>
+              <span class="channel-meta">下一步：规格与售后模板</span>
+            </article>
+            <article class="channel-card channel-card-pdd reveal">
+              <div class="channel-card-top"><i data-lucide="package-check" aria-hidden="true"></i><span class="channel-status">筹备中</span></div>
+              <h4>拼多多</h4>
+              <p>重点明确起步服务、增项条件、交付周期和不同套餐的范围差异。</p>
+              <span class="channel-meta">下一步：套餐边界复核</span>
+            </article>
+            <article class="channel-card channel-card-redbook reveal">
+              <div class="channel-card-top"><i data-lucide="notebook-tabs" aria-hidden="true"></i><span class="channel-status">筹备中</span></div>
+              <h4>小红书</h4>
+              <p>通过教程、演示案例和前后对比展示过程，再承接与内容相关的咨询。</p>
+              <span class="channel-meta">下一步：案例内容模板</span>
+            </article>
+          </div>
+          <p class="channel-note reveal">各平台商品标题、活动与展示价格可能不同；服务范围以统一服务编号和下单前确认内容为准。咨询、支付、退款与售后均在实际下单的平台内完成。</p>
+        </div>
       </div>
     </section>
 
@@ -347,6 +380,7 @@
         </div>
         <div class="brief-layout">
           <form class="brief-form" id="brief-form">
+            <input id="source" name="source" type="hidden" value="官网直接访问" />
             <div class="field">
               <label for="service">需要哪类服务</label>
               <select id="service" name="service" required>
@@ -420,7 +454,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">F</span><span>Felix Data Studio</span></a><p>数据自动化、数字工具与商业视觉服务。</p></div>
-      <nav aria-label="页脚导航"><a href="#services">服务</a><a href="#process">流程</a><a href="#brief">需求摘要</a><a href="privacy.html">隐私与服务边界</a></nav>
+      <nav aria-label="页脚导航"><a href="#services">服务</a><a href="#channels">服务渠道</a><a href="#process">流程</a><a href="#brief">需求摘要</a><a href="privacy.html">隐私与服务边界</a></nav>
       <div class="footer-meta"><span>© <span id="current-year"></span> Felix Data Studio</span><a href="#top">回到顶部 <i data-lucide="arrow-up" aria-hidden="true"></i></a></div>
     </div>
   </footer>

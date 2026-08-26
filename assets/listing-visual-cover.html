@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>海报与产品详情页设计服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover {
+      position: relative;
+      width: 1024px;
+      height: 1024px;
+      overflow: hidden;
+      color: #fff;
+      background: #13211c;
+    }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+    }
+    .cover::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 360px;
+      height: 100%;
+      background: #1a2c25;
+      content: "";
+    }
+    .mockups { position: absolute; z-index: 1; top: 184px; right: 44px; width: 340px; height: 520px; }
+    .sheet {
+      position: absolute;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: #edf7fa;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+    }
+    .sheet::before { position: absolute; inset: 0; content: ""; }
+    .sheet-back { top: 28px; left: 16px; width: 260px; height: 390px; transform: rotate(-7deg); }
+    .sheet-back::before {
+      background:
+        linear-gradient(#f37a68 0 96px, transparent 96px),
+        linear-gradient(90deg, #13211c 0 55%, transparent 55%) 28px 136px / 170px 18px no-repeat,
+        linear-gradient(90deg, #9fb2aa 0 78%, transparent 78%) 28px 184px / 170px 14px no-repeat,
+        linear-gradient(90deg, #9fb2aa 0 62%, transparent 62%) 28px 220px / 170px 14px no-repeat;
+    }
+    .sheet-front { top: 0; right: 0; width: 270px; height: 430px; transform: rotate(4deg); }
+    .sheet-front::before {
+      background:
+        linear-gradient(#c4ef50 0 112px, transparent 112px),
+        linear-gradient(90deg, #13211c 0 72%, transparent 72%) 30px 148px / 190px 22px no-repeat,
+        linear-gradient(90deg, #9fb2aa 0 88%, transparent 88%) 30px 204px / 190px 14px no-repeat,
+        linear-gradient(90deg, #9fb2aa 0 68%, transparent 68%) 30px 240px / 190px 14px no-repeat,
+        linear-gradient(90deg, #f37a68 0 34%, #dbe6e1 34% 68%, #13211c 68%) 30px 294px / 190px 78px no-repeat;
+    }
+    .size-tag {
+      position: absolute;
+      z-index: 2;
+      right: 18px;
+      bottom: 24px;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: #13211c;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .inner { position: relative; z-index: 2; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 92px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 610px; margin: 28px 0 20px; font-size: 66px; line-height: 1.09; letter-spacing: 0; }
+    .subtitle { max-width: 590px; margin: 0; color: #dbe6e1; font-size: 28px; font-weight: 600; }
+    .features { display: flex; max-width: 640px; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .9); font-size: 20px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 21px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="mockups" aria-hidden="true">
+      <div class="sheet sheet-back"></div>
+      <div class="sheet sheet-front"></div>
+      <div class="size-tag">主图 / 长图 / 海报</div>
+    </div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">电商视觉服务</div>
+      <h1>海报与<br />产品详情页设计</h1>
+      <p class="subtitle">商品主图 · 详情页长图 · 活动宣传图</p>
+      <div class="features">
+        <span>信息梳理</span><span>版式设计</span><span>多尺寸导出</span><span>可编辑源文件</span>
+      </div>
+      <div class="footer"><span>根据数量、尺寸和设计复杂度报价</span><strong>按需求定制</strong></div>
+    </div>
+  </main>
+</body>
+</html>

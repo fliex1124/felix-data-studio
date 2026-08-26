@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PPT 与商业报告美化服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover {
+      position: relative;
+      width: 1024px;
+      height: 1024px;
+      overflow: hidden;
+      color: #fff;
+      background: #13211c url("data-workspace.jpg") center / cover no-repeat;
+    }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(11, 24, 19, .98) 0%, rgba(11, 24, 19, .91) 55%, rgba(11, 24, 19, .56) 100%);
+      content: "";
+    }
+    .panel {
+      position: absolute;
+      top: 214px;
+      right: 52px;
+      width: 330px;
+      height: 390px;
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: rgba(237, 247, 250, .94);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
+      transform: rotate(3deg);
+    }
+    .panel::before { display: block; width: 100%; height: 84px; background: #c4ef50; content: ""; }
+    .panel::after { display: block; width: 70%; height: 22px; margin: 52px 30px 0; background: #13211c; box-shadow: 0 48px 0 #9fb2aa, 0 96px 0 #f37a68; content: ""; }
+    .inner { position: relative; z-index: 1; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 96px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 620px; margin: 28px 0 20px; font-size: 72px; line-height: 1.08; letter-spacing: 0; }
+    .subtitle { margin: 0; color: #dbe6e1; font-size: 29px; font-weight: 600; }
+    .features { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 52px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .82); font-size: 21px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 21px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="panel" aria-hidden="true"></div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">汇报表达服务</div>
+      <h1>PPT 与<br />商业报告美化</h1>
+      <p class="subtitle">工作总结 · 经营复盘 · 项目提案</p>
+      <div class="features">
+        <span>结构梳理</span><span>版式统一</span><span>图表优化</span><span>可编辑文件</span>
+      </div>
+      <div class="footer"><span>根据页数、内容成熟度和图表数量报价</span><strong>按需求定制</strong></div>
+    </div>
+  </main>
+</body>
+</html>

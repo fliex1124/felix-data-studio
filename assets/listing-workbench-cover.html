@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>企业工作台与网页工具开发服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover { position: relative; width: 1024px; height: 1024px; overflow: hidden; color: #fff; background: #13211c; }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      content: "";
+    }
+    .cover::after { position: absolute; top: 0; right: 0; width: 360px; height: 100%; background: #1a2c25; content: ""; }
+    .workbench {
+      position: absolute;
+      z-index: 1;
+      top: 184px;
+      right: 28px;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      grid-template-rows: 55px 1fr;
+      width: 370px;
+      height: 440px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .4);
+      background: #edf7fa;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+      transform: rotate(2deg);
+    }
+    .topbar { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; background: #13211c; }
+    .topbar::before { width: 116px; height: 15px; background: #fff; content: ""; }
+    .topbar::after { width: 28px; height: 28px; border-radius: 50%; background: #c4ef50; content: ""; }
+    .sidebar { padding-top: 23px; background: #1a2c25; }
+    .sidebar span { display: block; width: 34px; height: 8px; margin: 0 auto 27px; background: #9fb2aa; }
+    .sidebar span:first-child { height: 34px; border-radius: 4px; background: #c4ef50; }
+    .workspace { padding: 23px; }
+    .toolbar { display: flex; justify-content: space-between; }
+    .toolbar::before { width: 128px; height: 17px; background: #13211c; content: ""; }
+    .toolbar::after { width: 78px; height: 29px; background: #c4ef50; content: ""; }
+    .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 23px; }
+    .filters span { height: 38px; border: 1px solid #9fb2aa; background: #fff; }
+    .table { margin-top: 22px; border: 1px solid #d1dcda; background: #fff; }
+    .table-head { height: 36px; background: #dbe6e1; }
+    .table-row { display: grid; grid-template-columns: 1.2fr .8fr .7fr; height: 43px; border-top: 1px solid #d1dcda; }
+    .table-row span { align-self: center; width: 74%; height: 9px; margin-left: 14px; background: #9fb2aa; }
+    .table-row span:last-child { width: 52%; background: #f37a68; }
+    .workbench-label {
+      position: absolute;
+      z-index: 2;
+      right: 10px;
+      bottom: 12px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      background: #13211c;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .workbench-label strong { color: #c4ef50; }
+    .inner { position: relative; z-index: 2; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 92px; padding: 10px 16px; background: #edf7fa; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 625px; margin: 28px 0 20px; font-size: 62px; line-height: 1.1; letter-spacing: 0; }
+    .subtitle { max-width: 610px; margin: 0; color: #dbe6e1; font-size: 26px; font-weight: 600; }
+    .features { display: flex; max-width: 640px; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .9); font-size: 20px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 20px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="workbench" aria-hidden="true">
+      <div class="topbar"></div>
+      <aside class="sidebar"><span></span><span></span><span></span><span></span></aside>
+      <div class="workspace">
+        <div class="toolbar"></div>
+        <div class="filters"><span></span><span></span></div>
+        <div class="table"><div class="table-head"></div><div class="table-row"><span></span><span></span><span></span></div><div class="table-row"><span></span><span></span><span></span></div><div class="table-row"><span></span><span></span><span></span></div></div>
+      </div>
+      <div class="workbench-label">围绕真实流程 <strong>定制工具</strong></div>
+    </div>
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">网页工具开发</div>
+      <h1>企业工作台与<br />网页工具开发</h1>
+      <p class="subtitle">表单提交 · 数据查询 · 轻量业务后台</p>
+      <div class="features">
+        <span>角色流程</span><span>表单表格</span><span>查询筛选</span><span>源码部署</span>
+      </div>
+      <div class="footer"><span>第三方服务费用提前说明</span><strong>按功能范围报价</strong></div>
+    </div>
+  </main>
+</body>
+</html>

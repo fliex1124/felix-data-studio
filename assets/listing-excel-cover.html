@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excel 报表自动化服务主图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; background: #13211c; }
+    .cover {
+      position: relative;
+      width: 1024px;
+      height: 1024px;
+      overflow: hidden;
+      color: #fff;
+      background: #13211c url("data-workspace.jpg") center / cover no-repeat;
+    }
+    .cover::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(11, 24, 19, .98) 0%, rgba(11, 24, 19, .92) 52%, rgba(11, 24, 19, .5) 100%);
+      content: "";
+    }
+    .cover::after {
+      position: absolute;
+      right: -110px;
+      bottom: -110px;
+      width: 520px;
+      height: 520px;
+      border: 2px solid rgba(196, 239, 80, .52);
+      border-radius: 50%;
+      content: "";
+    }
+    .inner { position: relative; z-index: 1; display: flex; height: 100%; flex-direction: column; padding: 72px; }
+    .brand { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: 700; }
+    .mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #c4ef50; color: #13211c; font-size: 26px; font-weight: 900; }
+    .label { width: max-content; margin-top: 112px; padding: 10px 16px; background: #c4ef50; color: #13211c; font-size: 21px; font-weight: 800; }
+    h1 { max-width: 760px; margin: 28px 0 20px; font-size: 84px; line-height: 1.08; letter-spacing: 0; }
+    .subtitle { margin: 0; color: #dbe6e1; font-size: 31px; font-weight: 600; }
+    .features { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 58px; }
+    .features span { padding: 12px 17px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(19, 33, 28, .76); font-size: 22px; font-weight: 600; }
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .28); color: #dbe6e1; font-size: 21px; }
+    .footer strong { color: #c4ef50; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main class="cover">
+    <div class="inner">
+      <div class="brand"><span class="mark">F</span><span>Felix Data Studio</span></div>
+      <div class="label">办公效率服务</div>
+      <h1>Excel 报表<br />自动化</h1>
+      <p class="subtitle">日报 · 周报 · 月报 · 多表汇总</p>
+      <div class="features">
+        <span>数据整理</span><span>汇总规则</span><span>可复用模板</span><span>使用说明</span>
+      </div>
+      <div class="footer"><span>先看脱敏样例，再确认方案与报价</span><strong>按需求定制</strong></div>
+    </div>
+  </main>
+</body>
+</html>
