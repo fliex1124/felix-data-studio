@@ -24,6 +24,7 @@
 
 ## 文档
 
+- [项目当前进度](docs/project-status.md)
 - [服务目录](docs/service-catalog.md)
 - [平台商品文案](docs/platform-listing-copy.md)
 - [多平台运营基础](docs/multi-platform-operations.md)
