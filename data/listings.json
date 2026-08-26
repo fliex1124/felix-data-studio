@@ -5,7 +5,8 @@
   "currency": "CNY",
   "pricingPolicy": {
     "displayPriceCny": 9.9,
-    "referenceOriginalPriceCny": 19.9,
+    "referenceOriginalPriceCny": null,
+    "originalPricePolicy": "当前没有可核验的原价依据，平台商品不填写划线原价。",
     "displayPriceMeaning": "仅对应商品文案中明确写明的基础需求梳理或方向建议，不包含完整项目交付。",
     "fullProjectPricing": "根据范围、素材、周期、修改次数、源码、部署和维护要求单独确认。"
   },
@@ -100,7 +101,7 @@
       "requiredMaterials": ["准确页面文案", "合法可用的品牌与图片素材", "功能范围、参考页面与部署条件"],
       "asset": { "source": "assets/listing-website-cover.html", "upload": "assets/listing-website-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S03#brief",
-      "xianyu": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "awaiting_app_confirmation" }
+      "xianyu": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "published" }
     },
     {
       "id": "FDS-L04",
