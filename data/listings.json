@@ -6,7 +6,7 @@
   "pricingPolicy": {
     "displayPriceCny": 9.9,
     "referenceOriginalPriceCny": null,
-    "originalPricePolicy": "当前没有可核验的原价依据，平台商品不填写划线原价。",
+    "originalPricePolicy": "闲鱼当前商品保留 19.90 元划线价，账号持有人已确认暂不调整；该价格不作为 Felix 统一原价承诺。",
     "displayPriceMeaning": "仅对应商品文案中明确写明的基础需求梳理或方向建议，不包含完整项目交付。",
     "fullProjectPricing": "根据范围、素材、周期、修改次数、源码、部署和维护要求单独确认。"
   },
@@ -22,7 +22,19 @@
       "label": "闲鱼",
       "state": "active",
       "entryPath": "?source=xianyu#services",
-      "lastReviewedAt": "2026-08-26"
+      "lastReviewedAt": "2026-08-29",
+      "legacyListings": [
+        {
+          "title": "Asset4 V2 ESG数据库",
+          "itemId": "991464781532",
+          "publicUrl": "https://www.goofish.com/item?id=991464781532&categoryId=50023914",
+          "categoryId": "50023914",
+          "state": "published",
+          "priceCny": 15,
+          "lastVerifiedAt": "2026-08-29",
+          "note": "账号持有人决定保留，不纳入当前 Felix 服务目录。"
+        }
+      ]
     },
     "taobao": {
       "label": "淘宝",
@@ -75,7 +87,14 @@
         ]
       },
       "landingPath": "?source=xianyu&service=FDS-S01#brief",
-      "xianyu": { "title": "Excel 报表自动化｜日报周报月报自动汇总与更新", "state": "published" },
+      "xianyu": {
+        "title": "Excel 报表自动化｜日报周报月报自动汇总与更新",
+        "itemId": "1078361861583",
+        "publicUrl": "https://www.goofish.com/item?id=1078361861583&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "Excel报表自动化定制 数据整理 公式优化 可视化看板",
         "itemId": "1076875575082",
@@ -95,7 +114,14 @@
       "requiredMaterials": ["脱敏数据样例", "业务指标口径", "查看维度与待解决问题"],
       "asset": { "source": "assets/listing-dashboard-cover.html", "upload": "assets/listing-dashboard-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S02#brief",
-      "xianyu": { "title": "数据分析与可视化看板｜Excel数据整理｜指标梳理", "state": "published" },
+      "xianyu": {
+        "title": "数据分析与可视化看板｜Excel数据整理｜指标梳理",
+        "itemId": "1077437822377",
+        "publicUrl": "https://www.goofish.com/item?id=1077437822377&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "数据分析与可视化看板定制 Excel数据整理 指标梳理",
         "itemId": "1079821472687",
@@ -115,7 +141,14 @@
       "requiredMaterials": ["脱敏文件样例", "现有操作步骤", "输入、输出与异常规则"],
       "asset": { "source": "assets/listing-workflow-cover.html", "upload": "assets/listing-workflow-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S01#brief",
-      "xianyu": { "title": "办公流程自动化｜跨文件批量处理｜重复工作提效", "state": "published" },
+      "xianyu": {
+        "title": "办公流程自动化｜跨文件批量处理｜重复工作提效",
+        "itemId": "1078487585882",
+        "publicUrl": "https://www.goofish.com/item?id=1078487585882&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "办公流程自动化定制 跨文件批量处理 重复工作提效",
         "itemId": "1080001132407",
@@ -135,7 +168,14 @@
       "requiredMaterials": ["准确页面文案", "合法可用的品牌与图片素材", "功能范围、参考页面与部署条件"],
       "asset": { "source": "assets/listing-website-cover.html", "upload": "assets/listing-website-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S03#brief",
-      "xianyu": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "published" },
+      "xianyu": {
+        "title": "企业网页与活动页开发｜服务展示｜报名落地页",
+        "itemId": "1076589539036",
+        "publicUrl": "https://www.goofish.com/item?id=1076589539036&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "企业网页与活动页开发 服务展示 报名落地页",
         "itemId": "1077476807879",
@@ -155,7 +195,14 @@
       "requiredMaterials": ["脱敏业务样例", "使用角色与操作流程", "字段规则和现有系统情况"],
       "asset": { "source": "assets/listing-workbench-cover.html", "upload": "assets/listing-workbench-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S04#brief",
-      "xianyu": { "title": "企业工作台与网页工具开发｜表单查询｜轻量后台", "state": "published" },
+      "xianyu": {
+        "title": "企业工作台与网页工具开发｜表单查询｜轻量后台",
+        "itemId": "1076583915554",
+        "publicUrl": "https://www.goofish.com/item?id=1076583915554&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "企业工作台与网页工具开发 表单查询 轻量后台",
         "itemId": "1077958822942",
@@ -175,7 +222,14 @@
       "requiredMaterials": ["主体与认证情况", "功能范围和内容素材", "接口条件与期望发布时间"],
       "asset": { "source": "assets/listing-miniprogram-cover.html", "upload": "assets/listing-miniprogram-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S05#brief",
-      "xianyu": { "title": "微信小程序开发｜展示查询｜预约表单轻量定制", "state": "published" },
+      "xianyu": {
+        "title": "微信小程序开发｜展示查询｜预约表单轻量定制",
+        "itemId": "1078491877936",
+        "publicUrl": "https://www.goofish.com/item?id=1078491877936&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "微信小程序定制开发 展示查询 预约表单 轻量应用",
         "itemId": "1077966142238",
@@ -195,7 +249,14 @@
       "requiredMaterials": ["真实准确的产品文案", "清晰原图和品牌素材", "平台尺寸、参考风格与素材授权"],
       "asset": { "source": "assets/listing-visual-cover.html", "upload": "assets/listing-visual-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S08#brief",
-      "xianyu": { "title": "海报与产品详情页设计｜商品主图｜活动宣传图", "state": "published" },
+      "xianyu": {
+        "title": "海报与产品详情页设计｜商品主图｜活动宣传图",
+        "itemId": "1077319690465",
+        "publicUrl": "https://www.goofish.com/item?id=1077319690465&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "海报与产品详情页设计 商品主图 活动宣传图 电商视觉",
         "itemId": "1079018645639",
@@ -215,7 +276,14 @@
       "requiredMaterials": ["已确认文字和数据", "品牌规范与目标受众", "使用场景和参考风格"],
       "asset": { "source": "assets/listing-ppt-cover.html", "upload": "assets/listing-ppt-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S06#brief",
-      "xianyu": { "title": "PPT与商业报告美化｜工作总结｜经营复盘｜项目提案", "state": "published" },
+      "xianyu": {
+        "title": "PPT与商业报告美化｜工作总结｜经营复盘｜项目提案",
+        "itemId": "1078365961718",
+        "publicUrl": "https://www.goofish.com/item?id=1078365961718&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "PPT与商业报告美化 工作总结 经营复盘 项目提案",
         "itemId": "1080046852352",
@@ -235,7 +303,14 @@
       "requiredMaterials": ["真实产品参数与功能", "资质、价格和促销规则", "目标平台与参考方向"],
       "asset": { "source": "assets/listing-copy-cover.html", "upload": "assets/listing-copy-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S07#brief",
-      "xianyu": { "title": "商品文案与卖点梳理｜标题方向｜详情页内容结构", "state": "published" },
+      "xianyu": {
+        "title": "商品文案与卖点梳理｜标题方向｜详情页内容结构",
+        "itemId": "1077321214773",
+        "publicUrl": "https://www.goofish.com/item?id=1077321214773&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "商品文案与卖点梳理 标题方向 详情页内容结构",
         "itemId": "1080049892390",
@@ -255,7 +330,14 @@
       "requiredMaterials": ["品牌与店铺信息", "真实产品资料和清晰原图", "平台尺寸、素材数量与参考风格"],
       "asset": { "source": "assets/listing-store-kit-cover.html", "upload": "assets/listing-store-kit-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-P01#brief",
-      "xianyu": { "title": "店铺视觉套装设计｜头像店招｜主图详情图海报", "state": "published" },
+      "xianyu": {
+        "title": "店铺视觉套装设计｜头像店招｜主图详情图海报",
+        "itemId": "1079371772039",
+        "publicUrl": "https://www.goofish.com/item?id=1079371772039&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "店铺视觉套装设计 头像店招 主图详情图海报",
         "itemId": "1079069205625",
@@ -275,7 +357,14 @@
       "requiredMaterials": ["内容主题和已确认文案", "合法可用的图片与品牌素材", "目标平台尺寸和参考风格"],
       "asset": { "source": "assets/listing-social-cover.html", "upload": "assets/listing-social-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S08#brief",
-      "xianyu": { "title": "短视频封面与社交媒体配图｜活动图｜内容封面设计", "state": "published" },
+      "xianyu": {
+        "title": "短视频封面与社交媒体配图｜活动图｜内容封面设计",
+        "itemId": "1079488764234",
+        "publicUrl": "https://www.goofish.com/item?id=1079488764234&categoryId=50023914",
+        "categoryId": "50023914",
+        "state": "published",
+        "lastVerifiedAt": "2026-08-29"
+      },
       "taobao": {
         "title": "短视频封面与社交媒体配图 活动图 内容封面设计",
         "itemId": "1079380057682",
