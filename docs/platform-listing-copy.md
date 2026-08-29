@@ -16,6 +16,9 @@
 | FDS-L10 | 短视频封面与社交媒体配图｜活动图｜内容封面设计 | `assets/listing-social-cover-upload.jpg` |
 | FDS-L11 | 企业网页与活动页开发｜服务展示｜报名落地页 | `assets/listing-website-cover-upload.jpg` |
 
+Excel 商品 `FDS-L01` 另有 5 张详情主图套装，可由 `assets/listing-excel-main-images.html` 重新生成：
+`assets/listing-excel-main-01-cover.png`、`assets/listing-excel-main-02-scenarios.png`、`assets/listing-excel-main-03-workflow.png`、`assets/listing-excel-main-04-deliverables.png`、`assets/listing-excel-main-05-order-guide.png`。
+
 ## 通用商品简介
 
 你是否经常重复整理表格、制作固定报表，或需要把网页、汇报和商品展示做得更清楚？

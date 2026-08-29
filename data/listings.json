@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-26",
+  "updatedAt": "2026-08-29",
   "brand": "Felix Data Studio",
   "currency": "CNY",
   "pricingPolicy": {
@@ -26,9 +26,9 @@
     },
     "taobao": {
       "label": "淘宝",
-      "state": "planned",
+      "state": "draft",
       "entryPath": "?source=taobao#services",
-      "lastReviewedAt": null
+      "lastReviewedAt": "2026-08-29"
     },
     "pinduoduo": {
       "label": "拼多多",
@@ -63,7 +63,17 @@
       "purpose": "固定日报、周报、月报、多表合并、核对与重复计算。",
       "scope": ["字段与数据结构整理", "公式、透视表或脚本规则", "可重复更新的模板、说明与验收样例"],
       "requiredMaterials": ["脱敏历史报表", "数据来源与更新频率", "计算口径和使用环境"],
-      "asset": { "source": "assets/listing-excel-cover.html", "upload": "assets/listing-excel-cover-upload.png" },
+      "asset": {
+        "source": "assets/listing-excel-cover.html",
+        "upload": "assets/listing-excel-cover-upload.png",
+        "detailImages": [
+          "assets/listing-excel-main-01-cover.png",
+          "assets/listing-excel-main-02-scenarios.png",
+          "assets/listing-excel-main-03-workflow.png",
+          "assets/listing-excel-main-04-deliverables.png",
+          "assets/listing-excel-main-05-order-guide.png"
+        ]
+      },
       "landingPath": "?source=xianyu&service=FDS-S01#brief",
       "xianyu": { "title": "Excel 报表自动化｜日报周报月报自动汇总与更新", "state": "published" }
     },
@@ -101,7 +111,8 @@
       "requiredMaterials": ["准确页面文案", "合法可用的品牌与图片素材", "功能范围、参考页面与部署条件"],
       "asset": { "source": "assets/listing-website-cover.html", "upload": "assets/listing-website-cover-upload.jpg" },
       "landingPath": "?source=xianyu&service=FDS-S03#brief",
-      "xianyu": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "published" }
+      "xianyu": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "published" },
+      "taobao": { "title": "企业网页与活动页开发｜服务展示｜报名落地页", "state": "draft_pending_confirmation" }
     },
     {
       "id": "FDS-L04",

@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1440, initial-scale=1" />
+  <title>Felix Excel 报表自动化主图套装</title>
+  <style>
+    :root {
+      --ink: #10231c;
+      --ink-2: #19342a;
+      --lime: #c4ef50;
+      --cyan: #54d2cf;
+      --coral: #f37a68;
+      --blue: #78a9ff;
+      --paper: #f5f7f4;
+      --white: #ffffff;
+      --muted: #a8bbb3;
+      --line: #d4ded9;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1440px; background: #08150f; }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      font-synthesis: none;
+      letter-spacing: 0;
+    }
+    .asset {
+      position: relative;
+      width: 1440px;
+      height: 1440px;
+      overflow: hidden;
+      padding: 86px 96px 78px;
+    }
+    .asset * { letter-spacing: 0; }
+    .asset--dark { color: var(--white); background: var(--ink); }
+    .asset--light { color: var(--ink); background: var(--paper); }
+    .asset--dark::before,
+    .asset--light::before {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .032) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+    .asset--light::before {
+      background-image:
+        linear-gradient(rgba(16, 35, 28, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 35, 28, .035) 1px, transparent 1px);
+    }
+    .layer { position: relative; z-index: 1; height: 100%; }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .brand { display: flex; align-items: center; gap: 18px; font-size: 27px; font-weight: 800; }
+    .brand-mark {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .code { color: var(--muted); font-size: 24px; font-weight: 700; }
+    .asset--light .code { color: #5d7269; }
+    .eyebrow {
+      display: inline-block;
+      padding: 11px 17px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 23px;
+      font-weight: 900;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .footer-line {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 70px;
+      padding-top: 26px;
+      border-top: 2px solid rgba(255, 255, 255, .22);
+      color: #d9e5df;
+      font-size: 25px;
+      font-weight: 650;
+    }
+    .asset--light .footer-line { border-color: #bfcac5; color: #4d6258; }
+    .footer-line strong { color: var(--lime); font-weight: 900; }
+    .asset--light .footer-line strong { color: var(--ink); }
+
+    /* 01 Cover */
+    .cover-layout { display: grid; grid-template-columns: 640px 1fr; gap: 64px; margin-top: 116px; }
+    .cover-copy { padding-top: 16px; }
+    .cover-copy h1 { margin-top: 30px; font-size: 122px; line-height: 1.04; font-weight: 900; }
+    .cover-copy .subtitle { margin-top: 30px; color: #d7e4de; font-size: 39px; line-height: 1.5; font-weight: 700; }
+    .feature-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 52px; }
+    .feature-row span {
+      padding: 14px 18px;
+      border: 2px solid #71877d;
+      background: rgba(16, 35, 28, .78);
+      font-size: 25px;
+      font-weight: 750;
+    }
+    .workbook {
+      position: relative;
+      align-self: center;
+      height: 770px;
+      overflow: hidden;
+      border: 2px solid #728a7f;
+      border-radius: 6px;
+      background: #eef2f0;
+      box-shadow: 26px 32px 0 var(--lime);
+      color: var(--ink);
+      transform: rotate(1.5deg);
+    }
+    .workbook-bar { display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 28px; background: #14382c; color: #fff; }
+    .workbook-title { font-size: 23px; font-weight: 800; }
+    .window-dots { display: flex; gap: 10px; }
+    .window-dots i { width: 13px; height: 13px; border-radius: 50%; background: var(--coral); }
+    .window-dots i:nth-child(2) { background: #f6c85f; }
+    .window-dots i:nth-child(3) { background: var(--lime); }
+    .sheet-tabs { display: flex; height: 54px; align-items: end; gap: 4px; padding: 0 24px; background: #dce4e0; }
+    .sheet-tabs span { padding: 10px 20px 8px; background: #fff; border-top: 4px solid var(--lime); font-size: 18px; font-weight: 800; }
+    .sheet-tabs span + span { border-color: transparent; background: #e7ece9; color: #687a72; }
+    .sheet-grid {
+      position: relative;
+      height: 638px;
+      padding: 36px 30px;
+      background-color: #fff;
+      background-image:
+        linear-gradient(#e3e9e6 1px, transparent 1px),
+        linear-gradient(90deg, #e3e9e6 1px, transparent 1px);
+      background-size: 58px 42px;
+    }
+    .sheet-grid > .demo-tag { top: 0; }
+    .mock-table { border: 1px solid #aebdb6; background: rgba(255,255,255,.96); }
+    .mock-row { display: grid; grid-template-columns: 1.2fr .9fr .9fr .8fr; min-height: 48px; border-bottom: 1px solid #ced8d3; }
+    .mock-row:last-child { border-bottom: 0; }
+    .mock-row span { display: flex; align-items: center; padding: 0 12px; border-right: 1px solid #ced8d3; color: #455b51; font-size: 16px; }
+    .mock-row span:last-child { border-right: 0; }
+    .mock-row--head { background: #1f4a3a; }
+    .mock-row--head span { color: #fff; font-weight: 800; }
+    .chart { position: absolute; right: 36px; bottom: 45px; left: 36px; height: 245px; padding: 28px 24px 24px 62px; border: 1px solid #b8c6c0; background: rgba(255,255,255,.98); }
+    .chart-title { position: absolute; top: 18px; left: 22px; font-size: 17px; font-weight: 800; }
+    .bars { display: flex; height: 165px; align-items: end; gap: 18px; padding-top: 32px; border-bottom: 2px solid #8da097; }
+    .bars i { flex: 1; min-width: 30px; background: var(--cyan); }
+    .bars i:nth-child(2n) { background: var(--lime); }
+    .demo-tag { position: absolute; right: 26px; top: 18px; padding: 6px 10px; border: 1px solid #7e9188; color: #52675d; font-size: 15px; font-weight: 700; }
+
+    /* 02 Scenarios */
+    .section-heading { margin-top: 96px; }
+    .section-heading h2 { margin-top: 24px; max-width: 1040px; font-size: 82px; line-height: 1.13; font-weight: 900; }
+    .section-heading p { margin-top: 20px; color: #5f746a; font-size: 31px; line-height: 1.55; font-weight: 650; }
+    .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 66px; }
+    .scenario {
+      position: relative;
+      min-height: 264px;
+      padding: 38px 40px 34px 128px;
+      overflow: hidden;
+      border: 2px solid #c8d3ce;
+      border-radius: 6px;
+      background: rgba(255,255,255,.86);
+    }
+    .scenario::before { position: absolute; top: 0; bottom: 0; left: 0; width: 13px; background: var(--accent); content: ""; }
+    .scenario-num { position: absolute; top: 42px; left: 36px; color: var(--accent); font-size: 46px; font-weight: 900; }
+    .scenario h3 { font-size: 37px; line-height: 1.25; font-weight: 900; }
+    .scenario p { margin-top: 18px; color: #53685f; font-size: 24px; line-height: 1.55; font-weight: 600; }
+    .scenario--1 { --accent: #78a12c; }
+    .scenario--2 { --accent: #159997; }
+    .scenario--3 { --accent: #d75745; }
+    .scenario--4 { --accent: #4b75d0; }
+
+    /* 03 Workflow */
+    .workflow-heading { display: grid; grid-template-columns: 1fr 390px; align-items: end; gap: 40px; margin-top: 90px; }
+    .workflow-heading h2 { margin-top: 24px; font-size: 78px; line-height: 1.15; font-weight: 900; }
+    .workflow-heading p { padding-bottom: 12px; color: #cad9d2; font-size: 25px; line-height: 1.6; font-weight: 650; }
+    .flow { position: relative; display: grid; grid-template-columns: 1fr 86px 1fr 86px 1fr; align-items: center; margin-top: 70px; }
+    .flow-arrow { color: var(--lime); font-size: 62px; font-weight: 900; text-align: center; }
+    .flow-stage { height: 612px; overflow: hidden; border: 2px solid #6b8378; border-radius: 6px; background: #f7f9f8; color: var(--ink); }
+    .flow-stage-top { display: flex; align-items: center; justify-content: space-between; height: 82px; padding: 0 26px; background: #1d4537; color: #fff; }
+    .flow-stage-top strong { font-size: 25px; }
+    .flow-stage-top span { color: var(--lime); font-size: 18px; font-weight: 800; }
+    .mini-sheet { position: relative; height: 370px; padding: 26px 24px; background-image: linear-gradient(#dce4e0 1px, transparent 1px), linear-gradient(90deg, #dce4e0 1px, transparent 1px); background-size: 48px 38px; }
+    .mini-table { border: 1px solid #aabbb3; background: rgba(255,255,255,.96); }
+    .mini-table div { display: grid; grid-template-columns: 1fr .8fr .8fr; min-height: 50px; border-bottom: 1px solid #cbd6d1; }
+    .mini-table div:last-child { border-bottom: 0; }
+    .mini-table span { display: flex; align-items: center; padding: 8px; border-right: 1px solid #cbd6d1; color: #4d6258; font-size: 15px; }
+    .mini-table span:last-child { border-right: 0; }
+    .mini-table .mini-head { background: #d9eee4; }
+    .mini-table .mini-head span { color: #214739; font-weight: 900; }
+    .rule-list { display: grid; gap: 12px; padding: 28px 24px; }
+    .rule-list div { display: flex; align-items: center; min-height: 64px; padding: 0 18px; border-left: 7px solid var(--lime); background: #e9efec; font-size: 19px; font-weight: 800; }
+    .summary-bars { display: flex; height: 222px; align-items: end; gap: 13px; padding: 46px 24px 22px; border-bottom: 2px solid #a9bab2; }
+    .summary-bars i { flex: 1; background: var(--cyan); }
+    .summary-bars i:nth-child(2n) { background: var(--lime); }
+    .stage-caption { padding: 28px 26px; border-top: 1px solid #cbd6d1; }
+    .stage-caption strong { display: block; font-size: 27px; }
+    .stage-caption span { display: block; margin-top: 8px; color: #5d7168; font-size: 19px; line-height: 1.45; }
+    .workflow-note { display: flex; align-items: center; justify-content: space-between; margin-top: 42px; padding: 25px 28px; border-left: 10px solid var(--lime); background: #1a382e; color: #deebe5; font-size: 25px; font-weight: 700; }
+    .workflow-note span:last-child { color: var(--lime); }
+
+    /* 04 Deliverables */
+    .delivery-layout { display: grid; grid-template-columns: 470px 1fr; gap: 70px; margin-top: 96px; }
+    .delivery-intro .eyebrow { margin-bottom: 26px; }
+    .delivery-intro h2 { font-size: 64px; line-height: 1.15; font-weight: 900; }
+    .delivery-intro p { margin-top: 28px; color: #baccc4; font-size: 27px; line-height: 1.7; }
+    .delivery-count { margin-top: 52px; color: var(--lime); font-size: 180px; line-height: 1; font-weight: 900; }
+    .delivery-count small { display: block; margin-top: 8px; color: #b8c9c1; font-size: 23px; font-weight: 750; }
+    .delivery-list { border-top: 2px solid #70877d; }
+    .delivery-item { display: grid; grid-template-columns: 98px 1fr; gap: 24px; min-height: 202px; align-items: center; border-bottom: 2px solid #70877d; }
+    .delivery-item .num { color: var(--accent); font-size: 38px; font-weight: 900; }
+    .delivery-item h3 { font-size: 37px; line-height: 1.25; font-weight: 900; }
+    .delivery-item p { margin-top: 12px; color: #b9cbc3; font-size: 23px; line-height: 1.5; }
+    .delivery-item:nth-child(1) { --accent: var(--lime); }
+    .delivery-item:nth-child(2) { --accent: var(--cyan); }
+    .delivery-item:nth-child(3) { --accent: var(--coral); }
+    .delivery-item:nth-child(4) { --accent: var(--blue); }
+
+    /* 05 Order guide */
+    .order-heading { margin-top: 82px; }
+    .order-heading h2 { margin-top: 24px; font-size: 78px; line-height: 1.12; font-weight: 900; }
+    .order-heading p { margin-top: 18px; color: #60756b; font-size: 29px; font-weight: 650; }
+    .order-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 54px; }
+    .prepare-panel, .price-panel { min-height: 620px; padding: 32px 38px; border: 2px solid #c4cfca; border-radius: 6px; background: rgba(255,255,255,.9); }
+    .panel-kicker { color: #63776e; font-size: 21px; font-weight: 850; }
+    .prepare-panel h3, .price-panel h3 { margin-top: 7px; font-size: 37px; font-weight: 900; }
+    .prepare-list { margin-top: 24px; }
+    .prepare-item { display: grid; grid-template-columns: 50px 1fr; gap: 14px; align-items: start; min-height: 92px; padding: 17px 0; border-top: 1px solid #ccd6d1; }
+    .prepare-item:last-child { border-bottom: 1px solid #ccd6d1; }
+    .prepare-item .check { display: grid; width: 40px; height: 40px; place-items: center; background: var(--lime); color: var(--ink); font-size: 22px; font-weight: 900; }
+    .prepare-item strong { display: block; font-size: 23px; }
+    .prepare-item span { display: block; margin-top: 5px; color: #667a71; font-size: 18px; line-height: 1.4; }
+    .price-panel { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .price-panel .panel-kicker { color: var(--lime); }
+    .price { display: flex; align-items: end; gap: 10px; margin-top: 16px; color: var(--lime); }
+    .price .currency { padding-bottom: 16px; font-size: 42px; font-weight: 900; }
+    .price .amount { font-size: 96px; line-height: 1; font-weight: 900; }
+    .price-label { margin-top: 8px; color: #dbe7e1; font-size: 25px; line-height: 1.35; font-weight: 800; }
+    .included { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .included span { padding: 8px 11px; border: 1px solid #80968b; color: #e5eee9; font-size: 18px; font-weight: 700; }
+    .not-included { margin-top: 20px; padding: 18px 20px; border-left: 8px solid var(--coral); background: #1d392f; }
+    .not-included strong { color: var(--coral); font-size: 21px; }
+    .not-included p { margin-top: 6px; color: #d7e4de; font-size: 18px; line-height: 1.45; }
+    .price-note { margin-top: 17px; color: #b7c9c1; font-size: 18px; line-height: 1.5; }
+    .cycle-inline { margin-top: 10px; padding-top: 10px; border-top: 1px solid #527064; color: #dce8e2; font-size: 18px; line-height: 1.45; font-weight: 700; }
+    .cycle-inline strong { color: var(--cyan); }
+  </style>
+</head>
+<body>
+  <section class="asset asset--dark" id="excel-main-01">
+    <div class="layer">
+      <header class="topline">
+        <div class="brand"><span class="brand-mark">F</span><span>Felix Data Studio</span></div>
+        <div class="code">办公效率服务 · FDS-L01</div>
+      </header>
+      <div class="cover-layout">
+        <div class="cover-copy">
+          <span class="eyebrow">按需求定制</span>
+          <h1>Excel 报表<br />自动化</h1>
+          <p class="subtitle">日报 · 周报 · 月报 · 多表汇总</p>
+          <div class="feature-row">
+            <span>数据整理</span><span>公式优化</span><span>透视汇总</span><span>可复用模板</span>
+          </div>
+        </div>
+        <div class="workbook" aria-label="模拟 Excel 报表示意">
+          <div class="workbook-bar"><span class="workbook-title">月度经营报表.xlsx</span><span class="window-dots"><i></i><i></i><i></i></span></div>
+          <div class="sheet-tabs"><span>汇总报表</span><span>原始明细</span><span>规则说明</span></div>
+          <div class="sheet-grid">
+            <div class="demo-tag">演示数据</div>
+            <div class="mock-table">
+              <div class="mock-row mock-row--head"><span>部门</span><span>本月</span><span>上月</span><span>变化</span></div>
+              <div class="mock-row"><span>运营组</span><span>82,640</span><span>76,420</span><span>+8.1%</span></div>
+              <div class="mock-row"><span>市场组</span><span>68,310</span><span>64,850</span><span>+5.3%</span></div>
+              <div class="mock-row"><span>项目组</span><span>91,220</span><span>87,960</span><span>+3.7%</span></div>
+            </div>
+            <div class="chart">
+              <span class="chart-title">月度汇总趋势</span>
+              <div class="bars"><i style="height:44%"></i><i style="height:62%"></i><i style="height:54%"></i><i style="height:77%"></i><i style="height:66%"></i><i style="height:91%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-line"><span>先看脱敏样例，再确认方案与报价</span><strong>数据结构 · 处理规则 · 重复更新</strong></div>
+    </div>
+  </section>
+
+  <section class="asset asset--light" id="excel-main-02">
+    <div class="layer">
+      <header class="topline">
+        <div class="brand"><span class="brand-mark">F</span><span>Felix Data Studio</span></div>
+        <div class="code">02 / 适用场景</div>
+      </header>
+      <div class="section-heading">
+        <span class="eyebrow">适用场景</span>
+        <h2>这些重复表格，<br />可以整理成可复用流程</h2>
+        <p>适合字段相对固定、处理规则可以明确的工作</p>
+      </div>
+      <div class="scenario-grid">
+        <article class="scenario scenario--1">
+          <span class="scenario-num">01</span>
+          <h3>固定周报月报</h3>
+          <p>每周或每月重复整理<br />同类字段与统计指标</p>
+        </article>
+        <article class="scenario scenario--2">
+          <span class="scenario-num">02</span>
+          <h3>多文件合并</h3>
+          <p>多个表格反复复制合并<br />到同一个输出模板</p>
+        </article>
+        <article class="scenario scenario--3">
+          <span class="scenario-num">03</span>
+          <h3>重复核对计算</h3>
+          <p>按固定口径匹配、计算<br />并检查异常或缺失项</p>
+        </article>
+        <article class="scenario scenario--4">
+          <span class="scenario-num">04</span>
+          <h3>更新后重新出表</h3>
+          <p>数据源更新后<br />按同一规则生成新报表</p>
+        </article>
+      </div>
+      <div class="footer-line"><span>是否适合自动化，以样例结构与规则确认结果为准</span><strong>先用少量脱敏样例判断</strong></div>
+    </div>
+  </section>
+
+  <section class="asset asset--dark" id="excel-main-03">
+    <div class="layer">
+      <header class="topline">
+        <div class="brand"><span class="brand-mark">F</span><span>Felix Data Studio</span></div>
+        <div class="code">03 / 处理流程</div>
+      </header>
+      <div class="workflow-heading">
+        <div>
+          <span class="eyebrow">场景示意</span>
+          <h2>从原始明细，<br />到可重复更新的报表</h2>
+        </div>
+        <p>先确认字段和计算口径，<br />再确定公式、透视表或脚本方案</p>
+      </div>
+      <div class="flow">
+        <article class="flow-stage">
+          <div class="flow-stage-top"><strong>原始明细</strong><span>STEP 01</span></div>
+          <div class="mini-sheet">
+            <div class="mini-table">
+              <div class="mini-head"><span>日期</span><span>部门</span><span>金额</span></div>
+              <div><span>08-01</span><span>运营</span><span>1,260</span></div>
+              <div><span>08-02</span><span>市场</span><span>980</span></div>
+              <div><span>08-03</span><span>项目</span><span>1,840</span></div>
+            </div>
+          </div>
+          <div class="stage-caption"><strong>收集脱敏样例</strong><span>检查字段、格式与数据来源</span></div>
+        </article>
+        <div class="flow-arrow">→</div>
+        <article class="flow-stage">
+          <div class="flow-stage-top"><strong>规则处理</strong><span>STEP 02</span></div>
+          <div class="rule-list">
+            <div>字段清洗与统一</div>
+            <div>匹配、计算与校验</div>
+            <div>公式 / 透视表 / 脚本</div>
+            <div>异常项提示</div>
+          </div>
+          <div class="stage-caption"><strong>固化确认规则</strong><span>具体方式按环境与复杂度确定</span></div>
+        </article>
+        <div class="flow-arrow">→</div>
+        <article class="flow-stage">
+          <div class="flow-stage-top"><strong>汇总报表</strong><span>STEP 03</span></div>
+          <div class="mini-sheet">
+            <div class="demo-tag">演示数据</div>
+            <div class="summary-bars"><i style="height:44%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:83%"></i><i style="height:72%"></i></div>
+          </div>
+          <div class="stage-caption"><strong>按规则重新更新</strong><span>输出约定格式与验收样例</span></div>
+        </article>
+      </div>
+      <div class="workflow-note"><span>所有界面与数据均为场景示意，不代表真实客户项目</span><span>演示数据</span></div>
+    </div>
+  </section>
+
+  <section class="asset asset--dark" id="excel-main-04">
+    <div class="layer">
+      <header class="topline">
+        <div class="brand"><span class="brand-mark">F</span><span>Felix Data Studio</span></div>
+        <div class="code">04 / 交付内容</div>
+      </header>
+      <div class="delivery-layout">
+        <div class="delivery-intro">
+          <span class="eyebrow">可交付内容</span>
+          <h2>模板、规则<br />与说明一起交付</h2>
+          <p>按双方确认的功能、文件格式，<br />以及验收口径完成交付。</p>
+          <div class="delivery-count">04<small>类核心交付物</small></div>
+        </div>
+        <div class="delivery-list">
+          <article class="delivery-item">
+            <span class="num">01</span>
+            <div><h3>可重复更新的报表模板</h3><p>按确认的数据结构和输出格式制作</p></div>
+          </article>
+          <article class="delivery-item">
+            <span class="num">02</span>
+            <div><h3>公式、透视表或脚本规则</h3><p>具体实现方式根据数据量、环境与复杂度确定</p></div>
+          </article>
+          <article class="delivery-item">
+            <span class="num">03</span>
+            <div><h3>操作说明</h3><p>说明数据更新、运行步骤与注意事项</p></div>
+          </article>
+          <article class="delivery-item">
+            <span class="num">04</span>
+            <div><h3>验收样例</h3><p>使用约定样例核对结果与交付范围</p></div>
+          </article>
+        </div>
+      </div>
+      <div class="footer-line"><span>具体功能、文件格式和修改次数，以订单约定为准</span><strong>按确认范围交付</strong></div>
+    </div>
+  </section>
+
+  <section class="asset asset--light" id="excel-main-05">
+    <div class="layer">
+      <header class="topline">
+        <div class="brand"><span class="brand-mark">F</span><span>Felix Data Studio</span></div>
+        <div class="code">05 / 下单须知</div>
+      </header>
+      <div class="order-heading">
+        <span class="eyebrow">先沟通，再确认方案</span>
+        <h2>准备脱敏样例，<br />更快判断实现方式</h2>
+        <p>不需要提供真实敏感信息，样例可先做脱敏处理</p>
+      </div>
+      <div class="order-layout">
+        <section class="prepare-panel">
+          <span class="panel-kicker">下单前请准备</span>
+          <h3>需求确认材料</h3>
+          <div class="prepare-list">
+            <div class="prepare-item"><span class="check">✓</span><div><strong>脱敏历史报表</strong><span>保留字段结构与典型数据格式</span></div></div>
+            <div class="prepare-item"><span class="check">✓</span><div><strong>数据来源与更新频率</strong><span>说明文件数量、来源和更新周期</span></div></div>
+            <div class="prepare-item"><span class="check">✓</span><div><strong>计算口径</strong><span>提供指标定义、匹配与汇总规则</span></div></div>
+            <div class="prepare-item"><span class="check">✓</span><div><strong>使用环境</strong><span>Excel / WPS、系统版本及协作方式</span></div></div>
+          </div>
+        </section>
+        <section class="price-panel">
+          <span class="panel-kicker">价格边界说明</span>
+          <h3>基础需求梳理</h3>
+          <div class="price"><span class="currency">¥</span><span class="amount">9.90</span></div>
+          <p class="price-label">需求背景梳理 + 初步实现方向建议</p>
+          <div class="included"><span>需求理解</span><span>方向建议</span></div>
+          <div class="not-included">
+            <strong>此价格不包含</strong>
+            <p>完整报表制作、公式或脚本开发、成品模板交付</p>
+          </div>
+          <p class="price-note">完整项目按数据量、规则复杂度、周期与修改次数另行报价；请在下单前先沟通。</p>
+          <p class="cycle-inline"><strong>完整项目参考周期 2–5 个工作日</strong> · 资料齐全、范围确认后起算</p>
+        </section>
+      </div>
+      <div class="footer-line"><span>不展示真实客户数据，不承诺未经验证的效果</span><strong>先确认范围与报价</strong></div>
+    </div>
+  </section>
+  <script>
+    const requestedSlide = new URLSearchParams(window.location.search).get("slide");
+    if (requestedSlide) {
+      document.querySelectorAll(".asset").forEach((asset, index) => {
+        asset.style.display = index + 1 === Number(requestedSlide) ? "block" : "none";
+      });
+      document.documentElement.style.height = "1440px";
+      document.body.style.height = "1440px";
+      document.body.style.overflow = "hidden";
+    }
+  </script>
+</body>
+</html>
